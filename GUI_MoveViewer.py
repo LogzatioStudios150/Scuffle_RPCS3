@@ -715,7 +715,7 @@ class GUI_MoveViewer:
     def load_movelist_dialog(self):
         #Tk().withdraw()  # we don't want a full GUI, so keep the root window from appearing
 
-        filename = askopenfilename(initialdir = '{}/{}'.format(os.getcwd(), '/movelists'))  # show an "Open" dialog box and return the path to the selected file
+        filename = askopenfilename(initialdir = '{}/{}'.format(os.getcwd(), '/movelists'),filetypes=[('Header File', '*.khd *.sc6_movelist'),('All Files','*.*')])  # show an "Open" dialog box and return the path to the selected file
         self.load_movelist(filename)
 
     def save_movelist_dialog(self):
