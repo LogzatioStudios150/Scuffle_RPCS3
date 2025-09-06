@@ -1,0 +1,40 @@
+[
+    {
+        "name": "SpecialState",
+        "values": [
+            {
+                "input_value": 2,
+                "output_value": "Tech Crouch"
+            },
+            {
+                "input_value": 3,
+                "output_value": "Grounded"
+            },
+            {
+                "input_value": 4,
+                "output_value": "Airborne"
+            },
+            {
+                "input_value": 12,
+                "output_value": "Guard Impact"
+            },
+            {
+                "input_value": 34,
+                "output_value": "Attack Hit"
+            },
+            {
+                "input_value": 35,
+                "output_value": "Attack Missed"
+            },
+            {
+                "input_value": 43,
+                "output_value": "Invisible"
+            },
+            {
+                "input_value": 57,
+                "output_value": "Blocked Attack"
+            }
+        ]
+
+    }
+]

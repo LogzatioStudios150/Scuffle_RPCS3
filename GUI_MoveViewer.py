@@ -526,6 +526,7 @@ class GUI_MoveViewer:
             self.movelist.throw_length = 0x04
             self.frame_config.set_property('DisplaySettings', 'game', self.game_id_var.get())
             self.frame_config.write()
+        self.movelist.load_json()
 
     
     def set_character_id(self, id):
@@ -560,6 +561,9 @@ class GUI_MoveViewer:
                     file.write(empty_json)
                 with open(f'{character_dir}/25/SCV/0d.json', 'w') as file:
                     file.write(empty_json)
+
+            if self.movelist != None:
+                self.movelist.load_json()
         except:
             print("ID isn't valid.")
             self.movelist.character_id = '000'

@@ -1,17 +1,14 @@
 [
 	{
 		"state": "0x0017",
-		"type": "14",
-		"multiple_state": false,
+		"script_type": "14",
 		"name": "<b>SET STUN<b>:",
-		"last": "",
-		"no_arg_text": "",
 		"args": [
 			{
 				"index": 0,
 				"prefix": "",
 				"name": "type",
-				"cls": "AirStunType",
+				"value_type": "AirStunType",
 				"type": "format_value",
 				"range": false,
 				"data": {
@@ -22,59 +19,37 @@
 	},
 	{
 		"state": "0x0021",
-		"type": "14",
-		"multiple_state": false,
+		"script_type": "14",
 		"name": "<b>SET TIRA PERSONA<b>:",
-		"last": "",
-		"no_arg_text": "",
 		"args": [
 			{
-				"index": 0,
-				"prefix": "",
 				"name": "persona",
-				"cls": "TiraPersona",
-				"type": "format_value",
-				"range": false,
-				"data": {
-
-				}
+				"value_type": "TiraPersona"
 			}
 		]
 	},
 	{
 		"state": "0x0038",
-		"type": "14",
-		"multiple_state": false,
+		"script_type": "14",
 		"name": "<b>STOP TIME<b>:",
-		"last": "",
-		"no_arg_text": "",
 		"args": [
 			{
 				"index": 0,
 				"prefix": "",
-				"name": "0",
-				"cls": null,
-				"type": "format_value",
-				"range": false,
-				"data": {
-
-				}
+				"name": "0"
 			}
 		]
 	},
 	{
 		"state": "0x003e",
-		"type": "14",
-		"multiple_state": false,
+		"script_type": "14",
 		"name": "<b>FREEZE OPPONENT<b>:",
-		"last": "",
-		"no_arg_text": "",
 		"args": [
 			{
 				"index": 0,
 				"prefix": "",
 				"name": "freeze",
-				"cls": "BoolFlag",
+				"value_type": "BoolFlag",
 				"type": "format_value",
 				"range": false,
 				"data": {

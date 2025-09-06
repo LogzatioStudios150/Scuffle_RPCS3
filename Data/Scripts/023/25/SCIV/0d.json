@@ -1,19 +1,11 @@
 [
     {
 		"state": "0x316f",
-		"type": "0d",
-		"multiple_state": false,
+		"script_type": "0d",
 		"name": "PERSONA CHANGE %",
-		"last": "",
-		"no_arg_text": "",
 		"args": [
 			{
-				"index": 0,
-				"prefix": "",
 				"name": "percentage",
-				"cls": null,
-				"type": "format_value",
-				"range": false,
 				"data": {
 					"suffix": "%"
 				}
