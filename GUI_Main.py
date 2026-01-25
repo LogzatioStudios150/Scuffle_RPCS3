@@ -289,9 +289,8 @@ class GUI_Main(Tk):
         successful_update = self.launcher.Update(self.do_print_debug_values.get(), self.do_show_all_hitbox_data.get(), self.verbose_logging.get())
         self.game_var.set(self.frame_config.get_property('DisplaySettings','game', None))
         
-        
         if self.move_viewer != None:
-            if self.launcher.p1_primary_move_id != self.old_move_id and self.launcher.p1_primary_move_id != 0x58: #0x59 is the hex for 'coming to a stop' move_id
+            if self.launcher.p1_primary_move_id != self.old_move_id and self.launcher.p1_primary_move_id != self.launcher.game_reader.stop_val: #0x59 is the hex for 'coming to a stop' move_id
                 self.old_move_id = self.launcher.p1_primary_move_id
                 try:
                     self.move_viewer.load_moveid(str(self.launcher.p1_primary_move_id))
@@ -304,7 +303,7 @@ class GUI_Main(Tk):
                         self.launcher.game_reader.do_fix_goto = False
                     else:
                         self.launcher.game_reader.do_fix_goto = True
-                        
+                    print(f'{time.strftime("[%I:%M:%S %p]")} Injected movelist:{self.move_viewer.movelist_name_var.get()}')   
                     self.launcher.game_reader.do_write_movelist = True
                     self.launcher.game_reader.p1_movelist = self.move_viewer.movelist
                     self.move_viewer.do_inject_movelist = False

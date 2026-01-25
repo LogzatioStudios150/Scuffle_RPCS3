@@ -28,6 +28,7 @@ class SC6GameReader:
             self.is_movelist_new = False
             self.consecutive_frames_of_zero_timer = 0
             self.game = None
+            self.stop_val = None
             
             #self.module_address = 0x140000000 #hard coding this until it breaks, then use ModuleEnumerator again
             #self.module_address = 0x7FF60AC30000 #new hardcoded
@@ -111,9 +112,11 @@ class SC6GameReader:
                             if self.game == Game.SCIV:
                                 p1_movelist_address = AddressMap.SCIV_p1_movelist_address
                                 p2_movelist_address = AddressMap.SCIV_p2_movelist_address
+                                self.stop_val = 0x57
                             else:
                                 p1_movelist_address = AddressMap.SCV_p1_movelist_address
                                 p2_movelist_address = AddressMap.SCV_p2_movelist_address
+                                self.stop_val = 0x58
 
                             movelist_sample = GetDataBlockAtEndOfPointerOffsetList(self.process_handle, self.game_module_address, [p1_movelist_address], 0x4)
                             movelist_sample = GetValueFromDataBlock(movelist_sample, 0)

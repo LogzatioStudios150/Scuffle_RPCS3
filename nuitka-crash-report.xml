@@ -22,8 +22,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="ByteTools" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\ByteTools.py">
-    <optimization-time pass="1" time="0.03" micro_passes="5" max_branch_merge="92" merged_total="989" />
-    <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="59" merged_total="184" />
+    <optimization-time pass="1" time="0.07" micro_passes="5" max_branch_merge="87" merged_total="951" />
+    <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="56" merged_total="178" />
     <module_usages>
       <module_usage name="ctypes" finding="absolute" line="1" />
       <module_usage name="ctypes.wintypes" finding="absolute" line="2" />
@@ -38,8 +38,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="GUI_FrameDataOverlay" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\GUI_FrameDataOverlay.py">
-    <optimization-time pass="1" time="0.06" micro_passes="5" max_branch_merge="115" merged_total="2526" />
-    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="112" merged_total="428" />
+    <optimization-time pass="1" time="0.07" micro_passes="5" max_branch_merge="125" merged_total="2628" />
+    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="122" merged_total="442" />
     <module_usages>
       <module_usage name="tkinter" finding="absolute" line="6" />
       <module_usage name="tkinter.ttk" finding="absolute" line="7" />
@@ -50,8 +50,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="GUI_Main" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\GUI_Main.py">
-    <optimization-time pass="1" time="0.10" micro_passes="5" max_branch_merge="395" merged_total="5131" />
-    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="305" merged_total="939" />
+    <optimization-time pass="1" time="0.37" micro_passes="5" max_branch_merge="397" merged_total="5232" />
+    <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="306" merged_total="955" />
     <module_usages>
       <module_usage name="tkinter" finding="absolute" line="1" />
       <module_usage name="tkinter.ttk" finding="absolute" line="2" />
@@ -71,7 +71,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="GUI_MoveIdMeter" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\GUI_MoveIdMeter.py">
-    <optimization-time pass="1" time="0.15" micro_passes="5" max_branch_merge="202" merged_total="3603" />
+    <optimization-time pass="1" time="0.12" micro_passes="5" max_branch_merge="202" merged_total="3603" />
     <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="202" merged_total="714" />
     <module_usages>
       <module_usage name="tkinter" finding="absolute" line="1" />
@@ -82,8 +82,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="GUI_MoveViewer" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\GUI_MoveViewer.py">
-    <optimization-time pass="1" time="0.85" micro_passes="8" max_branch_merge="905" merged_total="17758" />
-    <optimization-time pass="2" time="0.07" micro_passes="1" max_branch_merge="687" merged_total="2022" />
+    <optimization-time pass="1" time="0.59" micro_passes="8" max_branch_merge="905" merged_total="17863" />
+    <optimization-time pass="2" time="0.08" micro_passes="1" max_branch_merge="687" merged_total="2035" />
     <module_usages>
       <module_usage name="json" finding="absolute" line="1" />
       <module_usage name="os" finding="absolute" line="2" />
@@ -101,8 +101,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="GUI_Overlay" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\GUI_Overlay.py">
-    <optimization-time pass="1" time="0.02" micro_passes="5" max_branch_merge="117" merged_total="1539" />
-    <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="117" merged_total="289" />
+    <optimization-time pass="1" time="0.03" micro_passes="5" max_branch_merge="117" merged_total="1585" />
+    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="117" merged_total="297" />
     <module_usages>
       <module_usage name="ConfigReader" finding="absolute" line="5" />
       <module_usage name="enum" finding="absolute" line="6" />
@@ -113,14 +113,14 @@ AssertionError
   </module>
   <module name="GameplayEnums" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\GameplayEnums.py">
     <optimization-time pass="1" time="0.10" micro_passes="4" max_branch_merge="166" merged_total="1922" />
-    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="166" merged_total="460" />
+    <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="166" merged_total="460" />
     <module_usages>
       <module_usage name="enum" finding="absolute" line="1" />
       <module_usage name="MovelistEnums" finding="absolute" line="3" />
     </module_usages>
   </module>
   <module name="ModuleEnumerator" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\ModuleEnumerator.py">
-    <optimization-time pass="1" time="0.02" micro_passes="5" max_branch_merge="43" merged_total="807" />
+    <optimization-time pass="1" time="0.03" micro_passes="5" max_branch_merge="43" merged_total="807" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="42" merged_total="160" />
     <module_usages>
       <module_usage name="ctypes" finding="absolute" line="1" />
@@ -130,15 +130,15 @@ AssertionError
     </module_usages>
   </module>
   <module name="MovelistEnums" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\MovelistEnums.py">
-    <optimization-time pass="1" time="1.29" micro_passes="5" max_branch_merge="138" merged_total="8766" />
-    <optimization-time pass="2" time="0.23" micro_passes="1" max_branch_merge="138" merged_total="1744" />
+    <optimization-time pass="1" time="1.60" micro_passes="5" max_branch_merge="138" merged_total="8937" />
+    <optimization-time pass="2" time="0.25" micro_passes="1" max_branch_merge="138" merged_total="1778" />
     <module_usages>
       <module_usage name="enum" finding="absolute" line="1" />
     </module_usages>
   </module>
   <module name="MovelistParser" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\MovelistParser.py">
-    <optimization-time pass="1" time="2.84" micro_passes="9" max_branch_merge="713" merged_total="61050" />
-    <optimization-time pass="2" time="0.29" micro_passes="1" max_branch_merge="635" merged_total="6487" />
+    <optimization-time pass="1" time="2.62" micro_passes="9" max_branch_merge="728" merged_total="65533" />
+    <optimization-time pass="2" time="0.41" micro_passes="1" max_branch_merge="650" merged_total="6997" />
     <module_usages>
       <module_usage name="struct" finding="absolute" line="7" />
       <module_usage name="MovelistEnums" finding="absolute" line="8" />
@@ -150,38 +150,38 @@ AssertionError
       <module_usage name="os" finding="absolute" line="14" />
       <module_usage name="AddressMap" finding="absolute" line="15" />
       <module_usage name="_GameStateManager" finding="absolute" line="16" />
-      <module_usage name="ntpath" finding="absolute" line="109" />
-      <module_usage name="ntpath" finding="absolute" line="110" />
-      <module_usage name="ntpath" finding="absolute" line="203" />
-      <module_usage name="ntpath" finding="absolute" line="204" />
-      <module_usage name="ntpath" finding="absolute" line="1147" />
-      <module_usage name="ntpath" finding="absolute" line="1148" />
-      <module_usage name="ntpath" finding="absolute" line="1155" />
-      <module_usage name="ntpath" finding="absolute" line="1156" />
-      <module_usage name="ntpath" finding="absolute" line="1169" />
-      <module_usage name="ntpath" finding="absolute" line="1170" />
-      <module_usage name="ntpath" finding="absolute" line="1177" />
-      <module_usage name="ntpath" finding="absolute" line="1178" />
-      <module_usage name="ntpath" finding="absolute" line="1189" />
-      <module_usage name="ntpath" finding="absolute" line="1190" />
-      <module_usage name="ntpath" finding="absolute" line="1197" />
-      <module_usage name="ntpath" finding="absolute" line="1198" />
-      <module_usage name="ntpath" finding="absolute" line="1287" />
-      <module_usage name="ntpath" finding="absolute" line="1288" />
-      <module_usage name="ntpath" finding="absolute" line="1295" />
-      <module_usage name="ntpath" finding="absolute" line="1296" />
-      <module_usage name="ntpath" finding="absolute" line="1309" />
-      <module_usage name="ntpath" finding="absolute" line="1310" />
-      <module_usage name="ntpath" finding="absolute" line="1317" />
-      <module_usage name="ntpath" finding="absolute" line="1318" />
-      <module_usage name="ntpath" finding="absolute" line="1329" />
-      <module_usage name="ntpath" finding="absolute" line="1330" />
-      <module_usage name="ntpath" finding="absolute" line="1337" />
-      <module_usage name="ntpath" finding="absolute" line="1338" />
-      <module_usage name="sys" finding="absolute" line="2120" />
-      <module_usage name="sys" finding="absolute" line="2319" />
-      <module_usage name="collections" finding="absolute" line="2403" />
-      <module_usage name="collections.defaultdict" finding="not-found" line="2403" />
+      <module_usage name="ntpath" finding="absolute" line="245" />
+      <module_usage name="ntpath" finding="absolute" line="246" />
+      <module_usage name="ntpath" finding="absolute" line="1933" />
+      <module_usage name="ntpath" finding="absolute" line="1934" />
+      <module_usage name="ntpath" finding="absolute" line="1953" />
+      <module_usage name="ntpath" finding="absolute" line="1954" />
+      <module_usage name="ntpath" finding="absolute" line="1961" />
+      <module_usage name="ntpath" finding="absolute" line="1962" />
+      <module_usage name="ntpath" finding="absolute" line="1976" />
+      <module_usage name="ntpath" finding="absolute" line="1977" />
+      <module_usage name="ntpath" finding="absolute" line="1984" />
+      <module_usage name="ntpath" finding="absolute" line="1985" />
+      <module_usage name="ntpath" finding="absolute" line="1994" />
+      <module_usage name="ntpath" finding="absolute" line="1995" />
+      <module_usage name="ntpath" finding="absolute" line="2002" />
+      <module_usage name="ntpath" finding="absolute" line="2003" />
+      <module_usage name="ntpath" finding="absolute" line="2014" />
+      <module_usage name="ntpath" finding="absolute" line="2015" />
+      <module_usage name="ntpath" finding="absolute" line="2023" />
+      <module_usage name="ntpath" finding="absolute" line="2024" />
+      <module_usage name="ntpath" finding="absolute" line="2036" />
+      <module_usage name="ntpath" finding="absolute" line="2037" />
+      <module_usage name="ntpath" finding="absolute" line="2044" />
+      <module_usage name="ntpath" finding="absolute" line="2045" />
+      <module_usage name="ntpath" finding="absolute" line="2057" />
+      <module_usage name="ntpath" finding="absolute" line="2058" />
+      <module_usage name="ntpath" finding="absolute" line="2066" />
+      <module_usage name="ntpath" finding="absolute" line="2067" />
+      <module_usage name="sys" finding="absolute" line="2215" />
+      <module_usage name="sys" finding="absolute" line="2414" />
+      <module_usage name="collections" finding="absolute" line="2498" />
+      <module_usage name="collections.defaultdict" finding="not-found" line="2498" />
     </module_usages>
   </module>
   <module name="PIDSearcher" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\PIDSearcher.py">
@@ -202,7 +202,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="SoulCaliburGameState" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\SoulCaliburGameState.py">
-    <optimization-time pass="1" time="0.07" micro_passes="5" max_branch_merge="341" merged_total="2757" />
+    <optimization-time pass="1" time="0.09" micro_passes="5" max_branch_merge="341" merged_total="2757" />
     <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="337" merged_total="509" />
     <module_usages>
       <module_usage name="string" finding="absolute" line="1" />
@@ -218,7 +218,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="VersionChecker" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\VersionChecker.py">
-    <optimization-time pass="1" time="0.06" micro_passes="5" max_branch_merge="29" merged_total="225" />
+    <optimization-time pass="1" time="0.15" micro_passes="5" max_branch_merge="29" merged_total="225" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="21" merged_total="39" />
     <distribution-usages>
       <distribution-usage name="requests" />
@@ -231,8 +231,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="_GameStateManager" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${cwd}\_GameStateManager.py">
-    <optimization-time pass="1" time="0.15" micro_passes="5" max_branch_merge="175" merged_total="5329" />
-    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="175" merged_total="1014" />
+    <optimization-time pass="1" time="0.15" micro_passes="5" max_branch_merge="175" merged_total="5314" />
+    <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="175" merged_total="1011" />
     <module_usages>
       <module_usage name="SoulCaliburGameState" finding="absolute" line="1" />
       <module_usage name="time" finding="absolute" line="2" />
@@ -248,25 +248,23 @@ AssertionError
     <optimization-time pass="2" time="0.00" />
     <module_usages />
   </module>
-  <module name="__main__" kind="PythonMainModule" usage="root_module" reason="Root module" source_path="${cwd}\GUI_Main.py">
-    <optimization-time pass="1" time="0.46" micro_passes="5" max_branch_merge="395" merged_total="5202" />
-    <optimization-time pass="2" time="0.04" micro_passes="1" max_branch_merge="305" merged_total="939" />
+  <module name="__main__" kind="PythonMainModule" usage="root_module" reason="Root module" source_path="${cwd}\GUI_MoveViewer.py">
+    <optimization-time pass="1" time="1.21" micro_passes="8" max_branch_merge="905" merged_total="18057" />
+    <optimization-time pass="2" time="0.10" micro_passes="1" max_branch_merge="704" merged_total="2052" />
     <module_usages>
-      <module_usage name="tkinter" finding="absolute" line="1" />
-      <module_usage name="tkinter.ttk" finding="absolute" line="2" />
-      <module_usage name="GUI_FrameDataOverlay" finding="absolute" line="3" />
-      <module_usage name="GUI_Overlay" finding="absolute" line="4" />
+      <module_usage name="json" finding="absolute" line="1" />
+      <module_usage name="os" finding="absolute" line="2" />
+      <module_usage name="tkinter" finding="absolute" line="3" />
+      <module_usage name="tkinter.ttk" finding="absolute" line="4" />
+      <module_usage name="tkinter.font" finding="absolute" line="5" />
+      <module_usage name="tkinter.filedialog" finding="absolute" line="6" />
+      <module_usage name="tkinter.filedialog" finding="absolute" line="7" />
+      <module_usage name="MovelistEnums" finding="absolute" line="8" />
+      <module_usage name="MovelistParser" finding="absolute" line="9" />
       <module_usage name="ConfigReader" finding="absolute" line="10" />
-      <module_usage name="MovelistEnums" finding="absolute" line="11" />
-      <module_usage name="_GameStateManager" finding="absolute" line="12" />
-      <module_usage name="ByteTools" finding="absolute" line="13" />
-      <module_usage name="time" finding="absolute" line="14" />
-      <module_usage name="enum" finding="absolute" line="15" />
-      <module_usage name="VersionChecker" finding="absolute" line="16" />
-      <module_usage name="webbrowser" finding="absolute" line="17" />
-      <module_usage name="GUI_MoveViewer" finding="absolute" line="18" />
-      <module_usage name="GUI_MoveIdMeter" finding="absolute" line="19" />
-      <module_usage name="sys" finding="absolute" line="20" />
+      <module_usage name="time" finding="absolute" line="11" />
+      <module_usage name="threading" finding="absolute" line="12" />
+      <module_usage name="GUI_Main" finding="absolute" line="13" />
       <module_usage name="_collections_abc" finding="absolute" line="1" />
       <module_usage name="abc" finding="absolute" line="1" />
       <module_usage name="ast" finding="absolute" line="1" />
@@ -528,27 +526,25 @@ AssertionError
       <module_usage name="zipfile" finding="absolute" line="1" />
     </module_usages>
   </module>
-  <module name="__parents_main__" kind="CompiledPythonModule" usage="plugins" reason="Auto enable multiprocessing freeze support" source_path="${cwd}\GUI_Main.py">
-    <optimization-time pass="1" time="0.14" micro_passes="5" max_branch_merge="395" merged_total="5459" />
-    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="305" merged_total="983" />
+  <module name="__parents_main__" kind="CompiledPythonModule" usage="plugins" reason="Auto enable multiprocessing freeze support" source_path="${cwd}\GUI_MoveViewer.py">
+    <optimization-time pass="1" time="0.60" micro_passes="8" max_branch_merge="905" merged_total="18323" />
+    <optimization-time pass="2" time="0.08" micro_passes="1" max_branch_merge="687" merged_total="2079" />
     <module_usages>
-      <module_usage name="tkinter" finding="absolute" line="1" />
-      <module_usage name="tkinter.ttk" finding="absolute" line="2" />
-      <module_usage name="GUI_FrameDataOverlay" finding="absolute" line="3" />
-      <module_usage name="GUI_Overlay" finding="absolute" line="4" />
+      <module_usage name="json" finding="absolute" line="1" />
+      <module_usage name="os" finding="absolute" line="2" />
+      <module_usage name="tkinter" finding="absolute" line="3" />
+      <module_usage name="tkinter.ttk" finding="absolute" line="4" />
+      <module_usage name="tkinter.font" finding="absolute" line="5" />
+      <module_usage name="tkinter.filedialog" finding="absolute" line="6" />
+      <module_usage name="tkinter.filedialog" finding="absolute" line="7" />
+      <module_usage name="MovelistEnums" finding="absolute" line="8" />
+      <module_usage name="MovelistParser" finding="absolute" line="9" />
       <module_usage name="ConfigReader" finding="absolute" line="10" />
-      <module_usage name="MovelistEnums" finding="absolute" line="11" />
-      <module_usage name="_GameStateManager" finding="absolute" line="12" />
-      <module_usage name="ByteTools" finding="absolute" line="13" />
-      <module_usage name="time" finding="absolute" line="14" />
-      <module_usage name="enum" finding="absolute" line="15" />
-      <module_usage name="VersionChecker" finding="absolute" line="16" />
-      <module_usage name="webbrowser" finding="absolute" line="17" />
-      <module_usage name="GUI_MoveViewer" finding="absolute" line="18" />
-      <module_usage name="GUI_MoveIdMeter" finding="absolute" line="19" />
-      <module_usage name="sys" finding="absolute" line="20" />
-      <module_usage name="sys" finding="absolute" line="403" />
-      <module_usage name="multiprocessing.spawn" finding="absolute" line="406" />
+      <module_usage name="time" finding="absolute" line="11" />
+      <module_usage name="threading" finding="absolute" line="12" />
+      <module_usage name="GUI_Main" finding="absolute" line="13" />
+      <module_usage name="sys" finding="absolute" line="910" />
+      <module_usage name="multiprocessing.spawn" finding="absolute" line="913" />
     </module_usages>
   </module>
   <module name="_aix_support" kind="UncompiledPythonModule" usage="stdlib" reason="Including as part of the non-excluded parts of standard library." source_path="${sys.real_prefix}\lib\_aix_support.py">
@@ -882,7 +878,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="charset_normalizer" kind="CompiledPythonPackage" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\charset_normalizer\__init__.py" distribution="charset-normalizer">
-    <optimization-time pass="1" time="0.06" micro_passes="3" max_branch_merge="4" merged_total="24" />
+    <optimization-time pass="1" time="0.11" micro_passes="3" max_branch_merge="4" merged_total="24" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="4" merged_total="8" />
     <module_usages>
       <module_usage name="os" finding="absolute" line="1" />
@@ -896,7 +892,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="charset_normalizer.api" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\charset_normalizer\api.py" distribution="charset-normalizer">
-    <optimization-time pass="1" time="0.24" micro_passes="6" max_branch_merge="249" merged_total="4677" />
+    <optimization-time pass="1" time="0.37" micro_passes="6" max_branch_merge="249" merged_total="4677" />
     <optimization-time pass="2" time="0.04" micro_passes="1" max_branch_merge="227" merged_total="750" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -911,7 +907,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="charset_normalizer.cd" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\charset_normalizer\cd.py" distribution="charset-normalizer">
-    <optimization-time pass="1" time="0.15" micro_passes="7" max_branch_merge="78" merged_total="3963" />
+    <optimization-time pass="1" time="0.14" micro_passes="7" max_branch_merge="78" merged_total="3963" />
     <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="42" merged_total="534" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -950,7 +946,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="charset_normalizer.md" kind="PythonExtensionModule" usage="import" reason="Extension module needed for standalone mode." source_path="${sys.prefix}\lib\site-packages\charset_normalizer\md.cp39-win_amd64.pyd" distribution="charset-normalizer">
-    <optimization-time pass="1" time="0.01" />
+    <optimization-time pass="1" time="0.02" />
     <optimization-time pass="2" time="0.00" />
     <module_usages />
   </module>
@@ -960,7 +956,7 @@ AssertionError
     <module_usages />
   </module>
   <module name="charset_normalizer.models" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\charset_normalizer\models.py" distribution="charset-normalizer">
-    <optimization-time pass="1" time="0.07" micro_passes="5" max_branch_merge="78" merged_total="2204" />
+    <optimization-time pass="1" time="0.10" micro_passes="5" max_branch_merge="78" merged_total="2204" />
     <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="36" merged_total="312" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -976,7 +972,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="charset_normalizer.utils" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\charset_normalizer\utils.py" distribution="charset-normalizer">
-    <optimization-time pass="1" time="0.12" micro_passes="7" max_branch_merge="37" merged_total="3436" />
+    <optimization-time pass="1" time="0.13" micro_passes="7" max_branch_merge="37" merged_total="3436" />
     <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="32" merged_total="464" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -2428,7 +2424,7 @@ AssertionError
       <module_usage name="zlib" finding="absolute" line="9" />
     </module_usages>
   </module>
-  <module name="enum" kind="UncompiledPythonModule" usage="import" reason="Technically required for CPython library startup." source_path="${sys.real_prefix}\lib\enum.py">
+  <module name="enum" kind="UncompiledPythonModule" usage="stdlib" reason="Technically required for CPython library startup." source_path="${sys.real_prefix}\lib\enum.py">
     <plugin-influence name="anti-bloat" influence="condition-used" condition="plugin(&quot;pyside6&quot;)" tags_used="plugin" result="false" />
     <optimization-time pass="1" time="0.64" micro_passes="8" max_branch_merge="92" merged_total="13865" />
     <optimization-time pass="2" time="0.00" />
@@ -2771,7 +2767,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="idna" kind="CompiledPythonPackage" usage="plugin:implicit-imports" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\idna\__init__.py" distribution="idna">
-    <optimization-time pass="1" time="0.03" micro_passes="3" max_branch_merge="18" merged_total="54" />
+    <optimization-time pass="1" time="0.10" micro_passes="3" max_branch_merge="18" merged_total="54" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="18" merged_total="18" />
     <module_usages>
       <module_usage name="os" finding="absolute" line="1" />
@@ -2781,8 +2777,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="idna.core" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\idna\core.py" distribution="idna">
-    <optimization-time pass="1" time="0.36" micro_passes="6" max_branch_merge="45" merged_total="5227" />
-    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="42" merged_total="817" />
+    <optimization-time pass="1" time="0.42" micro_passes="6" max_branch_merge="45" merged_total="5227" />
+    <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="42" merged_total="817" />
     <module_usages>
       <module_usage name="bisect" finding="absolute" line="1" />
       <module_usage name="re" finding="absolute" line="2" />
@@ -2800,7 +2796,7 @@ AssertionError
     <module_usages />
   </module>
   <module name="idna.intranges" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\idna\intranges.py" distribution="idna">
-    <optimization-time pass="1" time="0.01" micro_passes="5" max_branch_merge="27" merged_total="425" />
+    <optimization-time pass="1" time="0.02" micro_passes="5" max_branch_merge="27" merged_total="425" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="20" merged_total="77" />
     <module_usages>
       <module_usage name="bisect" finding="absolute" line="8" />
@@ -2813,8 +2809,8 @@ AssertionError
     <module_usages />
   </module>
   <module name="idna.uts46data" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\idna\uts46data.py" distribution="idna">
-    <optimization-time pass="1" time="0.06" micro_passes="4" max_branch_merge="3" merged_total="12" />
-    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="3" merged_total="3" />
+    <optimization-time pass="1" time="0.07" micro_passes="4" max_branch_merge="3" merged_total="12" />
+    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="3" merged_total="3" />
     <module_usages>
       <module_usage name="typing" finding="absolute" line="4" />
     </module_usages>
@@ -3083,7 +3079,7 @@ AssertionError
       <module_usage name="re" finding="absolute" line="640" />
     </module_usages>
   </module>
-  <module name="json" kind="UncompiledPythonPackage" usage="stdlib" reason="Including as part of the non-excluded parts of standard library." source_path="${sys.real_prefix}\lib\json\__init__.py">
+  <module name="json" kind="UncompiledPythonPackage" usage="import" reason="Including as part of the non-excluded parts of standard library." source_path="${sys.real_prefix}\lib\json\__init__.py">
     <optimization-time pass="1" time="0.07" micro_passes="5" max_branch_merge="41" merged_total="1031" />
     <optimization-time pass="2" time="0.00" />
     <module_usages>
@@ -3724,7 +3720,7 @@ AssertionError
       <module_usage name="_operator" finding="absolute" line="412" />
     </module_usages>
   </module>
-  <module name="os" kind="UncompiledPythonModule" usage="stdlib" reason="Technically required for CPython library startup." source_path="${sys.real_prefix}\lib\os.py">
+  <module name="os" kind="UncompiledPythonModule" usage="import" reason="Technically required for CPython library startup." source_path="${sys.real_prefix}\lib\os.py">
     <optimization-time pass="1" time="0.41" micro_passes="5" max_branch_merge="40" merged_total="6514" />
     <optimization-time pass="2" time="0.00" />
     <module_usages>
@@ -4030,7 +4026,7 @@ AssertionError
   </module>
   <module name="requests" kind="CompiledPythonPackage" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\__init__.py" distribution="requests">
     <plugin-influence name="implicit-imports" influence="condition-used" condition="not has_module(&quot;chardet&quot;)" tags_used="has_module" result="true" />
-    <optimization-time pass="1" time="0.29" micro_passes="5" max_branch_merge="32" merged_total="1088" />
+    <optimization-time pass="1" time="0.36" micro_passes="5" max_branch_merge="32" merged_total="1088" />
     <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="30" merged_total="208" />
     <distribution-usages>
       <distribution-usage name="urllib3" />
@@ -4077,8 +4073,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.adapters" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\adapters.py" distribution="requests">
-    <optimization-time pass="1" time="0.15" micro_passes="5" max_branch_merge="66" merged_total="3544" />
-    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="62" merged_total="631" />
+    <optimization-time pass="1" time="0.22" micro_passes="5" max_branch_merge="66" merged_total="3544" />
+    <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="62" merged_total="631" />
     <distribution-usages>
       <distribution-usage name="urllib3" />
     </distribution-usages>
@@ -4122,7 +4118,7 @@ AssertionError
   </module>
   <module name="requests.auth" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\auth.py" distribution="requests">
     <optimization-time pass="1" time="0.06" micro_passes="5" max_branch_merge="120" merged_total="2544" />
-    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="108" merged_total="455" />
+    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="108" merged_total="455" />
     <module_usages>
       <module_usage name="hashlib" finding="absolute" line="8" />
       <module_usage name="os" finding="absolute" line="9" />
@@ -4138,7 +4134,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.certs" kind="CompiledPythonModule" usage="import fromlist" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\certs.py" distribution="requests">
-    <optimization-time pass="1" time="0.00" micro_passes="5" max_branch_merge="2" merged_total="4" />
+    <optimization-time pass="1" time="0.01" micro_passes="5" max_branch_merge="2" merged_total="4" />
     <optimization-time pass="2" time="0.00" micro_passes="1" />
     <distribution-usages>
       <distribution-usage name="certifi" />
@@ -4149,7 +4145,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.compat" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\compat.py" distribution="requests">
-    <optimization-time pass="1" time="0.13" micro_passes="5" max_branch_merge="10" merged_total="219" />
+    <optimization-time pass="1" time="0.21" micro_passes="5" max_branch_merge="10" merged_total="219" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="10" merged_total="42" />
     <module_usages>
       <module_usage name="importlib" finding="absolute" line="10" />
@@ -4171,7 +4167,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.cookies" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\cookies.py" distribution="requests">
-    <optimization-time pass="1" time="0.10" micro_passes="6" max_branch_merge="30" merged_total="4354" />
+    <optimization-time pass="1" time="0.17" micro_passes="6" max_branch_merge="30" merged_total="4354" />
     <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="30" merged_total="611" />
     <module_usages>
       <module_usage name="calendar" finding="absolute" line="10" />
@@ -4184,7 +4180,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.exceptions" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\exceptions.py" distribution="requests">
-    <optimization-time pass="1" time="0.41" micro_passes="6" max_branch_merge="16" merged_total="4873" />
+    <optimization-time pass="1" time="0.33" micro_passes="6" max_branch_merge="16" merged_total="4873" />
     <optimization-time pass="2" time="0.05" micro_passes="1" max_branch_merge="16" merged_total="801" />
     <distribution-usages>
       <distribution-usage name="urllib3" />
@@ -4195,12 +4191,12 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.hooks" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\hooks.py" distribution="requests">
-    <optimization-time pass="1" time="0.00" micro_passes="5" max_branch_merge="11" merged_total="184" />
+    <optimization-time pass="1" time="0.01" micro_passes="5" max_branch_merge="11" merged_total="184" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="9" merged_total="36" />
     <module_usages />
   </module>
   <module name="requests.models" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\models.py" distribution="requests">
-    <optimization-time pass="1" time="0.23" micro_passes="7" max_branch_merge="68" merged_total="8616" />
+    <optimization-time pass="1" time="0.28" micro_passes="7" max_branch_merge="68" merged_total="8616" />
     <optimization-time pass="2" time="0.04" micro_passes="1" max_branch_merge="59" merged_total="1131" />
     <distribution-usages>
       <distribution-usage name="urllib3" />
@@ -4242,8 +4238,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.sessions" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\sessions.py" distribution="requests">
-    <optimization-time pass="1" time="0.23" micro_passes="5" max_branch_merge="162" merged_total="4362" />
-    <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="154" merged_total="825" />
+    <optimization-time pass="1" time="0.24" micro_passes="5" max_branch_merge="162" merged_total="4403" />
+    <optimization-time pass="2" time="0.19" micro_passes="1" max_branch_merge="154" merged_total="825" />
     <module_usages>
       <module_usage name="os" finding="absolute" line="8" />
       <module_usage name="sys" finding="absolute" line="9" />
@@ -4265,14 +4261,14 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.status_codes" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\status_codes.py" distribution="requests">
-    <optimization-time pass="1" time="0.02" micro_passes="7" max_branch_merge="15" merged_total="493" />
+    <optimization-time pass="1" time="0.04" micro_passes="7" max_branch_merge="15" merged_total="493" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="13" merged_total="69" />
     <module_usages>
       <module_usage name="requests.structures" finding="relative" line="21" />
     </module_usages>
   </module>
   <module name="requests.structures" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\structures.py" distribution="requests">
-    <optimization-time pass="1" time="0.03" micro_passes="6" max_branch_merge="17" merged_total="926" />
+    <optimization-time pass="1" time="0.05" micro_passes="6" max_branch_merge="17" merged_total="1007" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="16" merged_total="129" />
     <module_usages>
       <module_usage name="collections" finding="absolute" line="8" />
@@ -4281,7 +4277,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="requests.utils" kind="CompiledPythonModule" usage="import fromlist" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\requests\utils.py" distribution="requests">
-    <optimization-time pass="1" time="0.21" micro_passes="7" max_branch_merge="48" merged_total="9518" />
+    <optimization-time pass="1" time="0.28" micro_passes="7" max_branch_merge="48" merged_total="9518" />
     <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="37" merged_total="1307" />
     <distribution-usages>
       <distribution-usage name="urllib3" />
@@ -4763,7 +4759,7 @@ AssertionError
       <module_usage name="io" finding="absolute" line="656" />
     </module_usages>
   </module>
-  <module name="threading" kind="UncompiledPythonModule" usage="stdlib" reason="Including as part of the non-excluded parts of standard library." source_path="${sys.real_prefix}\lib\threading.py">
+  <module name="threading" kind="UncompiledPythonModule" usage="import" reason="Including as part of the non-excluded parts of standard library." source_path="${sys.real_prefix}\lib\threading.py">
     <optimization-time pass="1" time="0.85" micro_passes="7" max_branch_merge="50" merged_total="12089" />
     <optimization-time pass="2" time="0.00" />
     <module_usages>
@@ -5130,7 +5126,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3" kind="CompiledPythonPackage" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\__init__.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.02" micro_passes="5" max_branch_merge="19" merged_total="205" />
+    <optimization-time pass="1" time="0.04" micro_passes="5" max_branch_merge="19" merged_total="205" />
     <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="17" merged_total="36" />
     <module_usages>
       <module_usage name="os" finding="absolute" line="1" />
@@ -5157,7 +5153,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3._base_connection" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\_base_connection.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.01" micro_passes="4" max_branch_merge="15" merged_total="294" />
+    <optimization-time pass="1" time="0.02" micro_passes="4" max_branch_merge="15" merged_total="294" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="15" merged_total="73" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5168,7 +5164,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3._collections" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\_collections.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.13" micro_passes="7" max_branch_merge="55" merged_total="5687" />
+    <optimization-time pass="1" time="0.18" micro_passes="7" max_branch_merge="55" merged_total="5687" />
     <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="48" merged_total="748" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5180,7 +5176,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3._request_methods" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\_request_methods.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.02" micro_passes="5" max_branch_merge="36" merged_total="547" />
+    <optimization-time pass="1" time="0.03" micro_passes="5" max_branch_merge="36" merged_total="547" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="26" merged_total="99" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5199,8 +5195,8 @@ AssertionError
     <module_usages />
   </module>
   <module name="urllib3.connection" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\connection.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.31" micro_passes="6" max_branch_merge="75" merged_total="6704" />
-    <optimization-time pass="2" time="0.19" micro_passes="1" max_branch_merge="75" merged_total="1066" />
+    <optimization-time pass="1" time="0.38" micro_passes="6" max_branch_merge="75" merged_total="6704" />
+    <optimization-time pass="2" time="0.04" micro_passes="1" max_branch_merge="75" merged_total="1066" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
       <module_usage name="datetime" finding="absolute" line="3" />
@@ -5248,8 +5244,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.connectionpool" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\connectionpool.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.25" micro_passes="5" max_branch_merge="125" merged_total="4991" />
-    <optimization-time pass="2" time="0.03" micro_passes="1" max_branch_merge="123" merged_total="933" />
+    <optimization-time pass="1" time="0.44" micro_passes="5" max_branch_merge="125" merged_total="4991" />
+    <optimization-time pass="2" time="0.04" micro_passes="1" max_branch_merge="123" merged_total="933" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
       <module_usage name="errno" finding="absolute" line="3" />
@@ -5288,7 +5284,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.contrib.pyopenssl" kind="CompiledPythonModule" usage="import fromlist" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\contrib\pyopenssl.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.10" micro_passes="6" max_branch_merge="47" merged_total="4109" />
+    <optimization-time pass="1" time="0.12" micro_passes="6" max_branch_merge="47" merged_total="4109" />
     <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="28" merged_total="615" />
     <distribution-usages>
       <distribution-usage name="idna" />
@@ -5312,8 +5308,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.contrib.socks" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\contrib\socks.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.19" micro_passes="4" max_branch_merge="43" merged_total="1466" />
-    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="36" merged_total="357" />
+    <optimization-time pass="1" time="0.21" micro_passes="4" max_branch_merge="43" merged_total="1466" />
+    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="36" merged_total="357" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="41" />
       <module_usage name="socks" finding="not-found" line="44" />
@@ -5330,8 +5326,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.exceptions" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\exceptions.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.80" micro_passes="6" max_branch_merge="16" merged_total="7856" />
-    <optimization-time pass="2" time="0.11" micro_passes="1" max_branch_merge="16" merged_total="1274" />
+    <optimization-time pass="1" time="0.79" micro_passes="6" max_branch_merge="16" merged_total="7856" />
+    <optimization-time pass="2" time="0.12" micro_passes="1" max_branch_merge="16" merged_total="1274" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
       <module_usage name="socket" finding="absolute" line="3" />
@@ -5356,7 +5352,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.filepost" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\filepost.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.02" micro_passes="5" max_branch_merge="38" merged_total="433" />
+    <optimization-time pass="1" time="0.04" micro_passes="5" max_branch_merge="38" merged_total="433" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="29" merged_total="81" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5369,7 +5365,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.http2" kind="CompiledPythonPackage" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\http2\__init__.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.03" micro_passes="4" max_branch_merge="25" merged_total="156" />
+    <optimization-time pass="1" time="0.05" micro_passes="4" max_branch_merge="25" merged_total="156" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="22" merged_total="38" />
     <module_usages>
       <module_usage name="os" finding="absolute" line="1" />
@@ -5394,7 +5390,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.http2.connection" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\http2\connection.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.11" micro_passes="6" max_branch_merge="40" merged_total="4201" />
+    <optimization-time pass="1" time="0.12" micro_passes="6" max_branch_merge="40" merged_total="4201" />
     <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="34" merged_total="666" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5422,7 +5418,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.poolmanager" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\poolmanager.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.08" micro_passes="5" max_branch_merge="72" merged_total="3123" />
+    <optimization-time pass="1" time="0.09" micro_passes="5" max_branch_merge="72" merged_total="3123" />
     <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="70" merged_total="597" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5448,7 +5444,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.response" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\response.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.27" micro_passes="6" max_branch_merge="72" merged_total="10888" />
+    <optimization-time pass="1" time="0.33" micro_passes="6" max_branch_merge="72" merged_total="10888" />
     <optimization-time pass="2" time="0.05" micro_passes="1" max_branch_merge="67" merged_total="1660" />
     <distribution-usages>
       <distribution-usage name="zstandard" />
@@ -5522,7 +5518,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.util.request" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\util\request.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.04" micro_passes="5" max_branch_merge="30" merged_total="1165" />
+    <optimization-time pass="1" time="0.06" micro_passes="5" max_branch_merge="30" merged_total="1165" />
     <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="25" merged_total="218" />
     <distribution-usages>
       <distribution-usage name="zstandard" />
@@ -5568,7 +5564,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.util.ssl_" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\util\ssl_.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.06" micro_passes="5" max_branch_merge="92" merged_total="2095" />
+    <optimization-time pass="1" time="0.08" micro_passes="5" max_branch_merge="92" merged_total="2095" />
     <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="75" merged_total="395" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5611,7 +5607,7 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.util.timeout" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\util\timeout.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.01" micro_passes="5" max_branch_merge="39" merged_total="679" />
+    <optimization-time pass="1" time="0.02" micro_passes="5" max_branch_merge="39" merged_total="679" />
     <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="15" merged_total="68" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="1" />
@@ -5623,8 +5619,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="urllib3.util.url" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\urllib3\util\url.py" distribution="urllib3">
-    <optimization-time pass="1" time="0.09" micro_passes="6" max_branch_merge="46" merged_total="3388" />
-    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="42" merged_total="545" />
+    <optimization-time pass="1" time="0.11" micro_passes="6" max_branch_merge="46" merged_total="3388" />
+    <optimization-time pass="2" time="0.02" micro_passes="1" max_branch_merge="42" merged_total="545" />
     <distribution-usages>
       <distribution-usage name="idna" />
     </distribution-usages>
@@ -5696,7 +5692,7 @@ AssertionError
       <module_usage name="gc" finding="absolute" line="650" />
     </module_usages>
   </module>
-  <module name="webbrowser" kind="UncompiledPythonModule" usage="import" reason="Including as part of the non-excluded parts of standard library." source_path="${sys.real_prefix}\lib\webbrowser.py">
+  <module name="webbrowser" kind="UncompiledPythonModule" usage="stdlib" reason="Including as part of the non-excluded parts of standard library." source_path="${sys.real_prefix}\lib\webbrowser.py">
     <optimization-time pass="1" time="0.82" micro_passes="6" max_branch_merge="101" merged_total="7983" />
     <optimization-time pass="2" time="0.00" />
     <module_usages>
@@ -5818,8 +5814,8 @@ AssertionError
     </module_usages>
   </module>
   <module name="zstandard" kind="CompiledPythonPackage" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\zstandard\__init__.py" distribution="zstandard">
-    <optimization-time pass="1" time="0.19" micro_passes="5" max_branch_merge="59" merged_total="586" />
-    <optimization-time pass="2" time="0.00" micro_passes="1" max_branch_merge="49" merged_total="115" />
+    <optimization-time pass="1" time="0.25" micro_passes="5" max_branch_merge="59" merged_total="586" />
+    <optimization-time pass="2" time="0.01" micro_passes="1" max_branch_merge="49" merged_total="115" />
     <module_usages>
       <module_usage name="os" finding="absolute" line="1" />
       <module_usage name="__future__" finding="absolute" line="9" />
@@ -5850,8 +5846,8 @@ AssertionError
     <module_usages />
   </module>
   <module name="zstandard.backend_cffi" kind="CompiledPythonModule" usage="import" reason="Instructed by user to follow to all modules." source_path="${sys.prefix}\lib\site-packages\zstandard\backend_cffi.py" distribution="zstandard">
-    <optimization-time pass="1" time="0.95" micro_passes="7" max_branch_merge="201" merged_total="32598" />
-    <optimization-time pass="2" time="0.12" micro_passes="1" max_branch_merge="163" merged_total="4400" />
+    <optimization-time pass="1" time="1.02" micro_passes="7" max_branch_merge="201" merged_total="32598" />
+    <optimization-time pass="2" time="0.15" micro_passes="1" max_branch_merge="163" merged_total="4400" />
     <module_usages>
       <module_usage name="__future__" finding="absolute" line="9" />
       <module_usage name="io" finding="absolute" line="86" />
@@ -5860,26 +5856,33 @@ AssertionError
     </module_usages>
   </module>
   <performance>
-    <memory_usage name="after_launch" value="39088128" />
-    <memory_usage name="before_c_code_generation" value="112988160" />
-    <memory_usage name="before_running_scons" value="120573952" />
+    <memory_usage name="after_launch" value="39383040" />
+    <memory_usage name="before_c_code_generation" value="118022144" />
+    <memory_usage name="before_running_scons" value="123891712" />
   </performance>
   <data_file name="Config\HowTo.txt" source="${cwd}\Config\HowTo.txt" size="2972" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Config\SCIV_address_map.ini" source="${cwd}\Config\SCIV_address_map.ini" size="1961" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Config\SCV_address_map.ini" source="${cwd}\Config\SCV_address_map.ini" size="2065" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Config\color_scheme.ini" source="${cwd}\Config\color_scheme.ini" size="1377" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Config\color_scheme.ini" source="${cwd}\Config\color_scheme.ini" size="1633" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Config\font_config.ini" source="${cwd}\Config\font_config.ini" size="293" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Config\frame_data_overlay.ini" source="${cwd}\Config\frame_data_overlay.ini" size="389" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Config\frame_data_overlay.ini" source="${cwd}\Config\frame_data_overlay.ini" size="416" reason="specified data dir './Config' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\SCUFFLE_readme.txt" source="${cwd}\Data\SCUFFLE_readme.txt" size="1022" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\hotkey_info.txt" source="${cwd}\Data\hotkey_info.txt" size="1033" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\icon.ico" source="${cwd}\Data\icon.ico" size="265427" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\icon.png" source="${cwd}\Data\icon.png" size="1014" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Data\Scripts\script_documentation.txt" source="${cwd}\Data\Scripts\script_documentation.txt" size="4149" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Data\Scripts\Common\25\03.json" source="${cwd}\Data\Scripts\Common\25\03.json" size="20875" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Data\Scripts\Common\25\14.json" source="${cwd}\Data\Scripts\Common\25\14.json" size="1360" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Data\Scripts\Common\25\SCIV\0d.json" source="${cwd}\Data\Scripts\Common\25\SCIV\0d.json" size="14067" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Data\Scripts\Common\25\SCV\0d.json" source="${cwd}\Data\Scripts\Common\25\SCV\0d.json" size="13149" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Data\Scripts\Common\A5\01.json" source="${cwd}\Data\Scripts\Common\A5\01.json" size="10709" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\script_documentation.txt" source="${cwd}\Data\Scripts\script_documentation.txt" size="3690" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\023\25\03.json" source="${cwd}\Data\Scripts\023\25\03.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\023\25\14.json" source="${cwd}\Data\Scripts\023\25\14.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\023\25\SCIV\0d.json" source="${cwd}\Data\Scripts\023\25\SCIV\0d.json" size="191" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\023\25\SCV\0d.json" source="${cwd}\Data\Scripts\023\25\SCV\0d.json" size="190" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\023\A5\01.json" source="${cwd}\Data\Scripts\023\A5\01.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\023\A5\SCIV\0d.json" source="${cwd}\Data\Scripts\023\A5\SCIV\0d.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\023\A5\SCV\0d.json" source="${cwd}\Data\Scripts\023\A5\SCV\0d.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\Common\25\03.json" source="${cwd}\Data\Scripts\Common\25\03.json" size="9262" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\Common\25\14.json" source="${cwd}\Data\Scripts\Common\25\14.json" size="943" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\Common\25\SCIV\0d.json" source="${cwd}\Data\Scripts\Common\25\SCIV\0d.json" size="9298" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\Common\25\SCV\0d.json" source="${cwd}\Data\Scripts\Common\25\SCV\0d.json" size="6726" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Scripts\Common\A5\01.json" source="${cwd}\Data\Scripts\Common\A5\01.json" size="6655" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\Scripts\Common\A5\SCIV\0d.json" source="${cwd}\Data\Scripts\Common\A5\SCIV\0d.json" size="8" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\Scripts\Common\A5\SCV\0d.json" source="${cwd}\Data\Scripts\Common\A5\SCV\0d.json" size="8" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\Scripts\Custom\25\03.json" source="${cwd}\Data\Scripts\Custom\25\03.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
@@ -5889,9 +5892,23 @@ AssertionError
   <data_file name="Data\Scripts\Custom\A5\01.json" source="${cwd}\Data\Scripts\Custom\A5\01.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\Scripts\Custom\A5\SCIV\0d.json" source="${cwd}\Data\Scripts\Custom\A5\SCIV\0d.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\Scripts\Custom\A5\SCV\0d.json" source="${cwd}\Data\Scripts\Custom\A5\SCV\0d.json" size="6" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\AirStunType.json" source="${cwd}\Data\Types\AirStunType.json" size="2976" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\AssetType.json" source="${cwd}\Data\Types\AssetType.json" size="407" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\BoolFlag.json" source="${cwd}\Data\Types\BoolFlag.json" size="293" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\CharacterState.json" source="${cwd}\Data\Types\CharacterState.json" size="201" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\CharacterValue.json" source="${cwd}\Data\Types\CharacterValue.json" size="785" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\EffectTarget.json" source="${cwd}\Data\Types\EffectTarget.json" size="678" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\FacialExpression.json" source="${cwd}\Data\Types\FacialExpression.json" size="2084" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\LH_Situation.json" source="${cwd}\Data\Types\LH_Situation.json" size="1370" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\OpponentState.json" source="${cwd}\Data\Types\OpponentState.json" size="650" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\RandomVoiceCategory.json" source="${cwd}\Data\Types\RandomVoiceCategory.json" size="1682" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\ReturnState.json" source="${cwd}\Data\Types\ReturnState.json" size="1579" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\Types\SampleType.json" source="${cwd}\Data\Types\SampleType.json" size="399" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\SpecialState.json" source="${cwd}\Data\Types\SpecialState.json" size="990" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\TiraPersona.json" source="${cwd}\Data\Types\TiraPersona.json" size="298" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\ViewTarget.json" source="${cwd}\Data\Types\ViewTarget.json" size="408" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="Data\Types\VoiceCategory.json" source="${cwd}\Data\Types\VoiceCategory.json" size="3783" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
-  <data_file name="Data\Types\custom_type_documentation.txt" source="${cwd}\Data\Types\custom_type_documentation.txt" size="226" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
+  <data_file name="Data\Types\custom_type_documentation.txt" source="${cwd}\Data\Types\custom_type_documentation.txt" size="239" reason="specified data dir './Data' on command line" tags="user,copy,data-dir-contents" />
   <data_file name="certifi\cacert.pem" source="${sys.prefix}\lib\site-packages\certifi\cacert.pem" size="297255" reason="package data for 'certifi'" tags="config,copy" />
   <data_file name="tk\bgerror.tcl" source="${sys.real_prefix}\tcl\tk8.6\bgerror.tcl" size="8806" reason="Tk needed for tkinter usage" tags="tk,copy,data-dir-contents" />
   <data_file name="tk\button.tcl" source="${sys.real_prefix}\tcl\tk8.6\button.tcl" size="21612" reason="Tk needed for tkinter usage" tags="tk,copy,data-dir-contents" />
@@ -6832,27 +6849,27 @@ AssertionError
   <included_extension name="unicodedata.pyd" dest_path="unicodedata.pyd" source_path="${sys.real_prefix}\DLLs\unicodedata.pyd" package="" ignored="no" reason="used extension module" />
   <included_extension name="_cffi.pyd" dest_path="zstandard\_cffi.pyd" source_path="${sys.prefix}\lib\site-packages\zstandard\_cffi.cp39-win_amd64.pyd" package="zstandard" ignored="no" reason="used extension module" />
   <included_extension name="backend_c.pyd" dest_path="zstandard\backend_c.pyd" source_path="${sys.prefix}\lib\site-packages\zstandard\backend_c.cp39-win_amd64.pyd" package="zstandard" ignored="no" reason="used extension module" />
-  <data_composer blob_size="5003775" total="15523">
+  <data_composer blob_size="5014889" total="16101">
     <module_data filename="__bytecode.const" blob_name=".bytecode" blob_size="4374516" input_size="4398419" />
     <module_data filename="__constants.const" blob_name="" blob_size="820" input_size="2108" />
     <module_data filename="module.AddressMap.const" blob_name="AddressMap" blob_size="3240" input_size="4518" />
-    <module_data filename="module.ByteTools.const" blob_name="ByteTools" blob_size="1248" input_size="2080" />
+    <module_data filename="module.ByteTools.const" blob_name="ByteTools" blob_size="1180" input_size="1986" />
     <module_data filename="module.ConfigReader.const" blob_name="ConfigReader" blob_size="911" input_size="1575" />
-    <module_data filename="module.GUI_FrameDataOverlay.const" blob_name="GUI_FrameDataOverlay" blob_size="4364" input_size="7542" />
-    <module_data filename="module.GUI_Main.const" blob_name="GUI_Main" blob_size="5173" input_size="9121" />
+    <module_data filename="module.GUI_FrameDataOverlay.const" blob_name="GUI_FrameDataOverlay" blob_size="4440" input_size="7748" />
+    <module_data filename="module.GUI_Main.const" blob_name="GUI_Main" blob_size="5308" input_size="9351" />
     <module_data filename="module.GUI_MoveIdMeter.const" blob_name="GUI_MoveIdMeter" blob_size="2169" input_size="3976" />
-    <module_data filename="module.GUI_MoveViewer.const" blob_name="GUI_MoveViewer" blob_size="10396" input_size="17692" />
-    <module_data filename="module.GUI_Overlay.const" blob_name="GUI_Overlay" blob_size="1704" input_size="3239" />
+    <module_data filename="module.GUI_MoveViewer.const" blob_name="GUI_MoveViewer" blob_size="10473" input_size="17811" />
+    <module_data filename="module.GUI_Overlay.const" blob_name="GUI_Overlay" blob_size="1746" input_size="3339" />
     <module_data filename="module.GameplayEnums.const" blob_name="GameplayEnums" blob_size="4832" input_size="10531" />
     <module_data filename="module.ModuleEnumerator.const" blob_name="ModuleEnumerator" blob_size="1397" input_size="2129" />
-    <module_data filename="module.MovelistEnums.const" blob_name="MovelistEnums" blob_size="16586" input_size="27707" />
-    <module_data filename="module.MovelistParser.const" blob_name="MovelistParser" blob_size="18087" input_size="28072" />
+    <module_data filename="module.MovelistEnums.const" blob_name="MovelistEnums" blob_size="16633" input_size="27819" />
+    <module_data filename="module.MovelistParser.const" blob_name="MovelistParser" blob_size="18241" input_size="28473" />
     <module_data filename="module.PIDSearcher.const" blob_name="PIDSearcher" blob_size="615" input_size="1189" />
     <module_data filename="module.SoulCaliburGameState.const" blob_name="SoulCaliburGameState" blob_size="3207" input_size="5192" />
     <module_data filename="module.VersionChecker.const" blob_name="VersionChecker" blob_size="844" input_size="1314" />
-    <module_data filename="module._GameStateManager.const" blob_name="_GameStateManager" blob_size="4789" input_size="7262" />
-    <module_data filename="module.__main__.const" blob_name="__main__" blob_size="5435" input_size="9565" />
-    <module_data filename="module.__parents_main__.const" blob_name="__parents_main__" blob_size="5470" input_size="9669" />
+    <module_data filename="module._GameStateManager.const" blob_name="_GameStateManager" blob_size="4799" input_size="7298" />
+    <module_data filename="module.__main__.const" blob_name="__main__" blob_size="10788" input_size="18349" />
+    <module_data filename="module.__parents_main__.const" blob_name="__parents_main__" blob_size="10758" input_size="18313" />
     <module_data filename="module.certifi.const" blob_name="certifi" blob_size="291" input_size="556" />
     <module_data filename="module.certifi.core.const" blob_name="certifi.core" blob_size="580" input_size="1070" />
     <module_data filename="module.charset_normalizer.api.const" blob_name="charset_normalizer.api" blob_size="8170" input_size="8707" />
@@ -6926,13 +6943,13 @@ AssertionError
   <command_line>
     <option value="--standalone" />
     <option value="--enable-plugin=tk-inter" />
-    <option value="./GUI_Main.py" />
+    <option value="./GUI_MoveViewer.py" />
     <option value="--output-dir=./dist" />
-    <option value="--output-filename=SCUFFLE_RPCS3" />
+    <option value="--output-filename=SCUFFLE_Editor_RPCS3" />
     <option value="--remove-output" />
     <option value="--windows-console-mode=disable" />
     <option value="--windows-icon-from-ico=.\Data\icon.ico" />
-    <option value="--product-name=SCUFFLE_RPCS3" />
+    <option value="--product-name=SCUFFLE_Editor_RPCS3" />
     <option value="--file-version=" />
     <option value="--product-version=" />
     <option value="--include-data-dir=./Config=Config" />
@@ -6978,5 +6995,5 @@ AssertionError
       <path value="${sys.prefix}\lib\site-packages" />
     </search_path>
   </python>
-  <output run_filename="${cwd}\dist\GUI_Main.dist\SCUFFLE_RPCS3.exe" />
+  <output run_filename="${cwd}\dist\GUI_MoveViewer.dist\SCUFFLE_Editor_RPCS3.exe" />
 </nuitka-compilation-report>
