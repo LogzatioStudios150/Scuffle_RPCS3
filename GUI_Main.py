@@ -25,7 +25,7 @@ class GUI_Main(Tk):
 
         Tk.__init__(self)
         self.wm_title("SCUFFLE")
-        self.iconbitmap('Data/icon.ico')
+        self.iconbitmap(default='Data/icon.ico')
 
         self.color_scheme_config = ConfigReader.ConfigReader("color_scheme")
         self.color_scheme_config.add_comment("colors with names -> http://www.science.smith.edu/dftwiki/images/3/3d/TkInterColorCharts.png")
