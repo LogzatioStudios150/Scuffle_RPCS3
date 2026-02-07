@@ -24,7 +24,7 @@ class GUI_Main(Tk):
         self.overlay = None
 
         Tk.__init__(self)
-        self.wm_title("SCUFFLE")
+        self.wm_title(f"SCUFFLE - v{VersionChecker.CURRENT_VERSION.split('scuffle_RPCS3_')[1]}")
         self.iconbitmap(default='Data/icon.ico')
 
         self.color_scheme_config = ConfigReader.ConfigReader("color_scheme")
@@ -54,7 +54,7 @@ class GUI_Main(Tk):
         #Disables version checker
         updates = VersionChecker.check_version()
         if updates:
-            self.wm_title("SCUFFLE (Updates Available)")
+            self.wm_title(f"SCUFFLE - v{VersionChecker.CURRENT_VERSION.split('scuffle_RPCS3_')[1]} (Updates Available)")
 
         print("SCUFFLE Starting...")
         self.launcher = GameStateManager()
