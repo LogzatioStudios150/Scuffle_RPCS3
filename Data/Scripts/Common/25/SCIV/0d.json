@@ -89,7 +89,7 @@
 			{
 				
 				"name": "state",
-				"value_type": "SpecialState",
+				"value_type": "BattleState",
 				
 				"data": {
 
@@ -217,7 +217,7 @@
 			{
 				
 				"name": "0",
-				"value_type": "SpecialState",
+				"value_type": "BattleState",
 				
 				"data": {
 					"replace_char": ""
@@ -248,7 +248,7 @@
 		
 		"args": [
 			{
-				"value_type": "SpecialState",
+				"value_type": "BattleState",
 				
 				"data": {
 					"replace_char": ""

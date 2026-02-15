@@ -119,14 +119,7 @@
 				}
 			},
 			{
-				"name": "??",
-				"value_type": "BoolFlag",
-				"data": {
-					"replace_char": ""
-				}
-			},
-			{
-				"name": "RI_effect",
+				"name": "thrust/throw",
 				"value_type": "BoolFlag",
 				"data": {
 					"replace_char": ""

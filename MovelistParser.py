@@ -116,10 +116,11 @@ def string_to_class(string, custom_types=None):
         if s == string:
             return conversion_table[s]
     
-def find_script_info(movelist, state, char_data, custom_data, data, script_type, second_arg, args_list):
+def find_script_info(movelist, state, char_data, custom_data, data, script_type, second_arg = -1, args_list = None, params = None):
     found = False
     state_info = None
     argp = []
+    param_out = []
     if movelist.character_id != '000' and movelist.custom == True:
         for index_id in char_data:
             if "state" not in index_id:
@@ -224,26 +225,33 @@ def find_script_info(movelist, state, char_data, custom_data, data, script_type,
             offset = 1
             if state_info["args"][0]["index"] == -1:
                 offset = 0
+
+            if second_arg == -1:
+                param_out.append(str(a["name"]).split(":")[0])
+                continue
+
             if i >= second_arg - offset: 
                 break
-            if a["format_method"] == "format_value":
+            if a["format_method"] == "format_value" and args_list != None:
                 if isinstance(a["index"],list):
                     try:
-                        val = f'{format_value(args_list[a["index"][0]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist, **a["data"])} to {format_value(args_list[a["index"][1]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist, **a["data"])}'
+                        val = f'{format_value(args_list[a["index"][0]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist,params=params, **a["data"])} to {format_value(args_list[a["index"][1]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist,params=params, **a["data"])}'
                     except:
-                        val = f'{format_value(args_list[a["index"][0]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist, **a["data"])} to {format_value(args_list[a["index"][0]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist, **a["data"])}'
+                        val = f'{format_value(args_list[a["index"][0]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist,params=params, **a["data"])} to {format_value(args_list[a["index"][0]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist,params=params, **a["data"])}'
 
                 else:
-                    val = format_value(args_list[a["index"]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist, **a["data"])
+                    val = format_value(args_list[a["index"]], string_to_class(a["value_type"], movelist.custom_types), movelist=movelist,params=params, **a["data"])
                 argp.append(f'{a["prefix"]}[{a["name"]}{val}]')
             elif a["format_method"] == "name_from_enum":
                 val = name_from_enum(string_to_class(a["value_type"], movelist.custom_types), state, **a["data"])
                 argp.append(f'[{a["name"]}{val}]')
+    if second_arg == -1:
+        return param_out
 
     return found, state_info, argp
     
 
-def format_value(bytes, cls=None, auto = False, decode = False, movelist = None, negative = False, end = False, prefix = "", suffix = "", offset = 0, replace_char = " ", format = False, slice= False, slice_index = 0, FP16 = False, percent = False, percent_base = 100, multiplier = 0, divisor = 0, divide_first = False):
+def format_value(bytes, cls=None, auto = False, decode = False, movelist = None, params = [], negative = False, end = False, prefix = "", suffix = "", offset = 0, replace_char = " ", format = False, slice= False, slice_index = 0, FP16 = False, percent = False, percent_base = 100, multiplier = 0, divisor = 0, divide_first = False):
     value = bs2i(bytes,1,big_endian=True) if negative else b2i(bytes,1,big_endian=True)
     value_f = bs2i(bytes,1,big_endian=True)
     type = int(bytes[0])
@@ -371,14 +379,18 @@ def format_value(bytes, cls=None, auto = False, decode = False, movelist = None,
     
     elif type == 0x8a or type == 0x19 or type == 0x1a or type == 0x1b or type == 0x1c or type == 0x1d or type == 0x1e or type == 0x12 or type == 0x13 or type == 0x99: #variable / input param
         if value & 0xf0 == 0xf0:
-            result = f'<b>input param {(value ^ 0xf0) + 1}<b>'
+            index = value ^ 0xf0
+            if params != [] and index < len(params):
+                result = f'<b>{params[index]}<b>'
+            else:
+                result = f'<b>input param {(value ^ 0xf0) + 1}<b>'
         elif value & 0x0100 == 0x0100:
             result = f'<b>local variable {(value ^ 0x0100)}<b>'
         else:
             result = f'<b>variable {value}<b>'
         return result if result != None else "<b>last return<b>"
 
-def format_return_value(bytes, index, offset1 = 6, offset2 = 4, movelist=None):
+def format_return_value(bytes, index, offset1 = 6, offset2 = 4, movelist=None, params = []):
     variable_operators = [0x12, 0x13, 0x19, 0x1a, 0x1c, 0x8a, 0x99]
     math_operators = [0x8c, 0x8d, 0x8e, 0x8f, 0x90, 0x91, 0x94, 0x95, 0x97, 0x98]
     compare_operators = [0x9f, 0xa0, 0xa1, 0xa2, 0xa3, 0xa4]
@@ -390,7 +402,7 @@ def format_return_value(bytes, index, offset1 = 6, offset2 = 4, movelist=None):
         return"<b>compare result<b>"
     
     else:
-        return format_value(bytes[index - 6:index - 3],movelist=movelist, negative=True)   
+        return format_value(bytes[index - 6:index - 3],movelist=movelist, params=params, negative=True)   
 
 
 
@@ -1163,9 +1175,9 @@ class Cancel:
                 stop = b2i(split, 7, big_endian=True)
                 type_b = b2i(split, 10, big_endian=True) # for GI 325/323 seem to both be mid/high, 322 seems to be lows #for armor, this seems to be damage absorbable before break
                 vs_h = b2i(split, 13, big_endian=True) == 0x01 #horizontals
-                vs_v = b2i(split, 16, big_endian=True) == 0x01 #verticals
+                vs_v = b2i(split, 16, big_endian=True) >= 0x01 #verticals
                 vs_k = b2i(split, 19, big_endian=True) == 0x01 #most kicks are horizontals so only really useful for horizontal impacts?
-                vs_unk = b2i(split, 22, big_endian=True) == 0x01 #???
+                vs_t = b2i(split, 22, big_endian=True) >= 0x01 #???
 
                 if start in infinite_set:
                     start = 0
@@ -1178,24 +1190,57 @@ class Cancel:
 
                 gi_effective_against = ''
                 if vs_h:
-                    gi_effective_against += ('H')
+                    if vs_h > 1:
+                        gi_effective_against += ('h')
+                    else:
+                        gi_effective_against += ('H')
                 if vs_v:
-                    gi_effective_against += ('V')
-                if vs_k and vs_h: #seems like most kicks are horizontals???
-                    gi_effective_against += ('K')
+                    if vs_v > 1:
+                        gi_effective_against += ('v')
+                    else:
+                        gi_effective_against += ('V')
 
-                if type_a == 0x14a:
-                    red_or_green = 'REV{}{}{}'.format('{', type_b, '}')
+                if vs_k: #seems like most kicks are horizontals???
+                    if vs_k > 1:
+                        gi_effective_against += ('k')
+                    else:
+                        gi_effective_against += ('K')
+
+                if vs_t:
+                    if vs_t > 1:
+                        gi_effective_against += ('tg')
+                    else:
+                        gi_effective_against += ('TG')
+
+                hit_level = ''
+                if type_b == 0x140:
+                    hit_level = "High"
+                if type_b == 0x141:
+                    hit_level = "Mid"
+                if type_b == 0x142:
+                    hit_level = "Low"
+                if type_b == 0x143:
+                    hit_level = "High+Mid"
+                if type_b == 0x144:
+                    hit_level = "Mid+Low"
+                if type_b == 0x145:
+                    hit_level = "All"
+
+                if type_a == 0x148:
+                    red_or_green = 'ARMOR:{}{}{}{}'.format(hit_level,'{', gi_effective_against, '}')
+                elif type_a == 0x14a:
+                    red_or_green = 'REV{}{} dmg{}'.format('{', type_b, '}')
+                elif type_a == 0x14c or type_a == 0x14f:
+                    red_or_green = 'RI:{}{}{}{}'.format(hit_level,'{', gi_effective_against, '}')
                 else:
-                    if type_b == 0x142:
-                        gi_effective_against = gi_effective_against.swapcase()
-                    red_or_green = 'GI{}{}{}'.format('{', gi_effective_against, '}')
+                    red_or_green = 'GI:{}{}{}{}'.format(hit_level,'{', gi_effective_against, '}')
 
                 notes.append('{}[{}-{}]'.format(red_or_green, start, stop))
+        
         return notes
 
 
-    def get_gui_guide(self):
+    def get_gui_guide(self,input_params):
         guide = []
         index = 0
         list_of_bytes = []
@@ -1285,13 +1330,13 @@ class Cancel:
                             found, state_info, argp = find_script_info(self.movelist, state, self.movelist.xA5_char_data, self.movelist.xA5_custom_data, self.movelist.xA5_data, "0d", second_arg, args_list)
                             if found:
                                 if len(argp) > 0:
-                                    label = f'{label_prefix} {state_info["name"]} {"".join(argp)} | SCRIPT[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}]'
+                                    label = f'{label_prefix} {state_info["name"]} {"".join(argp)} | SCRIPT[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}]'
                                 else:
-                                    label = f'{label_prefix} {state_info["name"]}{(" " + state_info["no_arg_text"]) if "no_arg_text" in state_info else ""} | SCRIPT[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}]'
+                                    label = f'{label_prefix} {state_info["name"]}{(" " + state_info["no_arg_text"]) if "no_arg_text" in state_info else ""} | SCRIPT[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}]'
 
                                 last_bool = state_info["last"] if ("last" in state_info and state_info["last"] != "") else f'{state_info["name"]} CHECK'
                             else:
-                                label = f'{label_prefix} CUSTOM CHECK | SCRIPT[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}]'
+                                label = f'{label_prefix} CUSTOM CHECK | SCRIPT[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}]'
                             found = False
 
                         except:
@@ -1299,7 +1344,7 @@ class Cancel:
                     elif first_arg == 0x23: # Random Number
                         try:
                             label_prefix = '<b>RANDOM NUMBER<b>:'
-                            label = f'{label_prefix} between <b>0<b> and {format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist)}'
+                            label = f'{label_prefix} between <b>0<b> and {format_value(self.bytes[state_index: state_index + 3], movelist=self.movelist,params=input_params)}'
 
                         except:
                             state = 'ERROR'
@@ -1322,10 +1367,10 @@ class Cancel:
                                         break
 
                                 
-                                label = f'{label_prefix} FRAME WINDOW [{format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist, prefix="frame ") if format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist) != None else f"<b>math result 1<b>"} to {format_value(args_list[0],movelist=self.movelist,prefix="frame ") if math_result == False else f"<b>math result 2<b>"}]'
+                                label = f'{label_prefix} FRAME WINDOW [{format_value(self.bytes[state_index: state_index + 3], movelist=self.movelist,params=input_params, prefix="frame ") if format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist) != None else f"<b>math result 1<b>"} to {format_value(args_list[0], movelist=self.movelist,params=input_params,prefix="frame ") if math_result == False else f"<b>math result 2<b>"}]'
                                     
                             else:
-                                label = f'{label_prefix} FRAME [frame:{format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist, prefix="frame ") if format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist) != None else f"<b>math result<b>"}]'
+                                label = f'{label_prefix} FRAME [frame:{format_value(self.bytes[state_index: state_index + 3], movelist=self.movelist,params=input_params, prefix="frame ") if format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist) != None else f"<b>math result<b>"}]'
                                 last_bool = 'FRAME CHECK'
 
                                     
@@ -1361,7 +1406,7 @@ class Cancel:
                         args_list_f = [arg_bytes_f[i:i + 3] for i in range(0, len(arg_bytes_f), 3)]
 
                         i = 0
-                        params = [format_value(arg_bytes[i:i + 3],movelist=self.movelist) for i in range(6, len(arg_bytes), 3)]
+                        params = [format_value(arg_bytes[i:i + 3], movelist=self.movelist,params=input_params) for i in range(6, len(arg_bytes), 3)]
                             
                         if is_soul_charge:
                             tag = '<sc>'
@@ -1392,7 +1437,7 @@ class Cancel:
                                 last_bool = state_info["last"] if ("last" in state_info and state_info["last"] != "") else state_info["name"]
 
                             if state_id == 0x13da:
-                                label = f'<b>ADD/REMOVE METER<b>: [target:{format_value(args_list[0],CharacterIndex,movelist=self.movelist)}][type:{format_value(args_list[1],MeterType,movelist=self.movelist)}][percentage_base:{format_value(args_list[2],MeterCalcBase,movelist=self.movelist,replace_char="")}][amount:{format_value(args_list[3],movelist=self.movelist, negative=True, FP16=True, percent_base=240 if bs2i(args_list[2],1,big_endian=True) != 1 else 120)}]'
+                                label = f'<b>ADD/REMOVE METER<b>: [target:{format_value(args_list[0],CharacterIndex, movelist=self.movelist,params=input_params)}][type:{format_value(args_list[1],MeterType, movelist=self.movelist,params=input_params)}][percentage_base:{format_value(args_list[2],MeterCalcBase, movelist=self.movelist,params=input_params,replace_char="")}][amount:{format_value(args_list[3], movelist=self.movelist,params=input_params, negative=True, FP16=True, percent_base=240 if bs2i(args_list[2],1,big_endian=True) != 1 else 120)}]'
 
                         except:
                             state = 'ERROR'
@@ -1400,29 +1445,29 @@ class Cancel:
                     
                     elif first_arg == 0x06:
                         if second_arg == 0x02:
-                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}][entry_frame:{format_value(args_list[0],movelist=self.movelist,prefix="frame ")}]', index))
+                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}][entry_frame:{format_value(args_list[0], movelist=self.movelist,params=input_params,prefix="frame ")}]', index))
                         elif second_arg >= 0x03:
-                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}][entry_frame:{format_value(args_list[0],movelist=self.movelist,prefix="frame ")}][switch:{format_value(args_list[1],movelist=self.movelist,prefix="on frame ")}][input_params:({params})]', index))
+                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}][entry_frame:{format_value(args_list[0], movelist=self.movelist,params=input_params,prefix="frame ")}][switch:{format_value(args_list[1], movelist=self.movelist,params=input_params,prefix="on frame ")}][input_params:({params})]', index))
                         else:
-                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}]', index))
+                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}]', index))
                     
                     elif first_arg == 0x07:
                         if second_arg == 0x02:
-                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}][entry_frame:{format_value(args_list[0],movelist=self.movelist,prefix="frame ")}]', index))
+                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}][entry_frame:{format_value(args_list[0], movelist=self.movelist,params=input_params,prefix="frame ")}]', index))
                         elif second_arg >= 0x03:
                             
-                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}][entry_frame:{format_value(args_list[0],movelist=self.movelist,prefix="frame ")}][switch:{format_value(args_list[1],movelist=self.movelist,prefix="on frame ")}][input_params:({params})]', index))
+                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}][entry_frame:{format_value(args_list[0], movelist=self.movelist,params=input_params,prefix="frame ")}][switch:{format_value(args_list[1], movelist=self.movelist,params=input_params,prefix="on frame ")}][input_params:({params})]', index))
                         else:
-                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist)}]', index))
+                            list_of_bytes.append((current_bytes, f'<b>SWITCH MOVE<b>: MOVE[id:{format_value(self.bytes[state_index: state_index + 3],decode=True, movelist=self.movelist,params=input_params)}]', index))
 
                     elif first_arg == 0x09:
-                        list_of_bytes.append((current_bytes,f'<b>ENTER STATE<b>: [state:{format_value(self.bytes[state_index:state_index + 3],SpecialState,movelist=self.movelist)}]', index))
+                        list_of_bytes.append((current_bytes,f'<b>ENTER STATE<b>: [state:{format_value(self.bytes[state_index:state_index + 3],SpecialState, movelist=self.movelist,params=input_params)}]', index))
                     
                     elif first_arg == 0x0a:
-                        list_of_bytes.append((current_bytes,f'<b>LEAVE STATE<b>: [state:{format_value(self.bytes[state_index:state_index + 3],SpecialState,movelist=self.movelist)}]', index))
+                        list_of_bytes.append((current_bytes,f'<b>LEAVE STATE<b>: [state:{format_value(self.bytes[state_index:state_index + 3],SpecialState, movelist=self.movelist,params=input_params)}]', index))
 
                     elif first_arg == 0x0c:
-                        list_of_bytes.append((current_bytes,f'<b>UPDATE FLOAT VALUE AT INDEX<b>: [index:{format_value(self.bytes[state_index:state_index + 3],movelist=self.movelist)}][new_value:{format_value(args_list[0],movelist=self.movelist,FP16=True)}]', index))
+                        list_of_bytes.append((current_bytes,f'<b>UPDATE FLOAT VALUE AT INDEX<b>: [index:{format_value(self.bytes[state_index:state_index + 3], movelist=self.movelist,params=input_params)}][new_value:{format_value(args_list[0], movelist=self.movelist,params=input_params,FP16=True)}]', index))
                     
                     elif first_arg == 0x0d or first_arg == 0x15: # 0x3041 - CE VO | 0x3031 - Throw logic
                         try:
@@ -1455,7 +1500,7 @@ class Cancel:
 
                         except:
                             state= 'ERROR'
-                        list_of_bytes.append((current_bytes, f'<b>SET STATE<b>: [state:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist)}][value:{format_value(self.bytes[state_index + 3: state_index + 6], decode=False, movelist=self.movelist)}]' if label == "" else label, index))
+                        list_of_bytes.append((current_bytes, f'<b>SET STATE<b>: [state:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist,params=input_params)}][value:{format_value(self.bytes[state_index + 3: state_index + 6], decode=False, movelist=self.movelist,params=input_params)}]' if label == "" else label, index))
 
                     elif first_arg == 0x19:
                         try:
@@ -1463,68 +1508,68 @@ class Cancel:
                             found, state_info, argp = find_script_info(self.movelist, state_id_f, self.movelist.x25_char_data, self.movelist.x25_custom_data, self.movelist.x25_data, "03", second_arg, args_list_f)
                             if found:
                                 if len(argp) > 0:
-                                    label = f'{state_info["name"]}(frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist)}) {"".join(argp)}'
+                                    label = f'{state_info["name"]}(frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist,params=input_params)}) {"".join(argp)}'
                                 else:
-                                    label = f'{state_info["name"]}(frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist)}){(" " + state_info["no_arg_text"]) if "no_arg_text" in state_info else ""}'
+                                    label = f'{state_info["name"]}(frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist,params=input_params)}){(" " + state_info["no_arg_text"]) if "no_arg_text" in state_info else ""}'
 
                                 last_bool = state_info["last"] if ("last" in state_info and state_info["last"] != "") else state_info["name"]
 
                             if state_id_f == 0x13da:
-                                label = f'<b>ADD/REMOVE METER<b>: (frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist)}) [target:{format_value(args_list_f[0],CharacterIndex,movelist=self.movelist)}][type:{format_value(args_list_f[1],MeterType,movelist=self.movelist)}][percentage_base:{format_value(args_list_f[2],MeterCalcBase,movelist=self.movelist,replace_char="")}][amount:{format_value(args_list_f[3],movelist=self.movelist, negative=True, percent=True, percent_base=240 if bs2i(args_list_f[2],1,big_endian=True) != 1 else 120)}]'
+                                label = f'<b>ADD/REMOVE METER<b>: (frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist,params=input_params)}) [target:{format_value(args_list_f[0],CharacterIndex, movelist=self.movelist,params=input_params)}][type:{format_value(args_list_f[1],MeterType, movelist=self.movelist,params=input_params)}][percentage_base:{format_value(args_list_f[2],MeterCalcBase, movelist=self.movelist,params=input_params,replace_char="")}][amount:{format_value(args_list_f[3], movelist=self.movelist,params=input_params, negative=True, percent=True, percent_base=240 if bs2i(args_list_f[2],1,big_endian=True) != 1 else 120)}]'
 
                         except:
                             state = 'ERROR'
-                        list_of_bytes.append((current_bytes, f'<b>SYSTEM SCRIPT<b>: {state_f}(frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist)})' if label == "" else label, index))
+                        list_of_bytes.append((current_bytes, f'<b>SYSTEM SCRIPT<b>: {state_f}(frame:{format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist,params=input_params)})' if label == "" else label, index))
 
 
                     elif first_arg == 0x26:
-                        list_of_bytes.append((current_bytes, f'<b>SET ACTIVE HITBOX<b>: {format_value(self.bytes[state_index: state_index + 3],movelist=self.movelist, prefix = "hitbox ", offset = 1)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>SET ACTIVE HITBOX<b>: {format_value(self.bytes[state_index: state_index + 3], movelist=self.movelist,params=input_params, prefix = "hitbox ", offset = 1)}', index))
                     
 
                     else:
-                        list_of_bytes.append((current_bytes, '<b>SYSTEM SCRIPT<b>: [id:{}] ?? ({}) '.format(format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist), state_args), index))
+                        list_of_bytes.append((current_bytes, '<b>SYSTEM SCRIPT<b>: [id:{}] ?? ({}) '.format(format_value(self.bytes[state_index: state_index + 3], decode=False, movelist=self.movelist,params=input_params), state_args), index))
                     current_bytes =  b''
                 if inst == CC.EXE_19 or inst == CC.EXE_99:
                     try:
-                        list_of_bytes.append((current_bytes, f'<b>SET VARIABLE<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)} = {format_return_value(self.bytes,index,movelist=self.movelist)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>SET VARIABLE<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)} = {format_return_value(self.bytes,index, movelist=self.movelist,params=input_params)}', index))
                     except:
-                        list_of_bytes.append((current_bytes, f'<b>SET VARIABLE<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>SET VARIABLE<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.EXE_1A:
                     try:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: ADD [{format_value(self.bytes[index - 3:index],movelist=self.movelist)} += {format_return_value(self.bytes,index,movelist=self.movelist)}]', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: ADD [{format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)} += {format_return_value(self.bytes,index, movelist=self.movelist,params=input_params)}]', index))
                     except:
-                        list_of_bytes.append((current_bytes, f'<b>VARAIBLE MATH<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARAIBLE MATH<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.EXE_1B:
                     try:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: SUBTRACT [{format_value(self.bytes[index - 3:index],movelist=self.movelist)} -= {format_return_value(self.bytes,index,movelist=self.movelist)}]', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: SUBTRACT [{format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)} -= {format_return_value(self.bytes,index, movelist=self.movelist,params=input_params)}]', index))
                     except:
-                        list_of_bytes.append((current_bytes, f'<b>VARAIBLE MATH<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARAIBLE MATH<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.EXE_1C:
                     try:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: MULTIPLY [{format_value(self.bytes[index - 3:index],movelist=self.movelist)} ⁎= {format_return_value(self.bytes,index,movelist=self.movelist)}]', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: MULTIPLY [{format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)} ⁎= {format_return_value(self.bytes,index, movelist=self.movelist,params=input_params)}]', index))
                     except:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.EXE_1D:
                     try:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: DIVIDE [{format_value(self.bytes[index - 3:index],movelist=self.movelist)} ÷= {format_return_value(self.bytes,index,movelist=self.movelist)}]', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: DIVIDE [{format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)} ÷= {format_return_value(self.bytes,index, movelist=self.movelist,params=input_params)}]', index))
                     except:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.EXE_1E:
                     try:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: MOD [{format_value(self.bytes[index - 3:index],movelist=self.movelist)} %= {format_return_value(self.bytes,index,movelist=self.movelist)}]', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: MOD [{format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)} %= {format_return_value(self.bytes,index, movelist=self.movelist,params=input_params)}]', index))
                     except:
-                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                        list_of_bytes.append((current_bytes, f'<b>VARIABLE MATH ASSIGNMENT<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.EXE_12:
-                    list_of_bytes.append((current_bytes, f'<b>INCREMENT VARIABLE<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                    list_of_bytes.append((current_bytes, f'<b>INCREMENT VARIABLE<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.EXE_13:
-                    list_of_bytes.append((current_bytes, f'<b>DECREMENT VARIABLE<b>: {format_value(self.bytes[index - 3:index],movelist=self.movelist)}', index))
+                    list_of_bytes.append((current_bytes, f'<b>DECREMENT VARIABLE<b>: {format_value(self.bytes[index - 3:index], movelist=self.movelist,params=input_params)}', index))
                     current_bytes = b''
                 if inst == CC.PEN_2A:
                     list_of_bytes.append((current_bytes, 'GOTO: {}'.format(format(args,'04x') if args not in end else 'END'), index))
@@ -1541,8 +1586,8 @@ class Cancel:
 
             elif inst in Movelist.ONE_BYTE_INSTRUCTIONS:
                 #print(args_list)
-                var = format_value(self.bytes[index - 6:index - 3],movelist=self.movelist)
-                value = format_value(self.bytes[index - 3 : index],movelist=self.movelist,negative=True)
+                var = format_value(self.bytes[index - 6:index - 3], movelist=self.movelist,params=input_params)
+                value = format_value(self.bytes[index - 3 : index], movelist=self.movelist,params=input_params,negative=True)
                 if inst == CC.RETURN_05:
                     index += 1
                     list_of_bytes.append((current_bytes,f'<b>RETURN VALUE<b>:[{value if value != None else f"<b>last return value<b>"}]',index))
@@ -1957,7 +2002,9 @@ class Movelist:
         self.bytes = raw_bytes
 
         self.custom_types = self.xA5_data = self.xA5_char_data = self.xA5_custom_data = self.x25_data = self.x25_char_data = self.x25_custom_data = None
-        self.name = name.split('/')[-1].split('_')[0].capitalize()
+        if '_movelist' in name:
+            name.replace('_movelist','_Movelist')
+        self.name = name.split('/')[-1].split('_Movelist')[0].capitalize()
         self.game = game
         self.verbose = False
         self.throw_length = throw_length

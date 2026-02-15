@@ -816,9 +816,11 @@ class GUI_MoveViewer:
         try:
             if move_id[0:2] == "0x":
                 id = int(move_id[2:],16)
+                encoded_id = id
                 id = MovelistParser.decode_move_id(id,self.movelist)
             else:
                 id = int(move_id)
+                encoded_id = MovelistParser.encode_move_id(id,self.movelist)
         except:
             print('unrecognized move_id: {}'.format(move_id))
             return
@@ -862,7 +864,9 @@ class GUI_MoveViewer:
                 self.hitboxes_data.append((raw, intr, move.attack_indexes[i]))
             self.load_hitbox()
 
-            cancel_guide, goto_line_to_line = move.cancel.get_gui_guide()
+            input_params = MovelistParser.find_script_info(self.movelist, encoded_id, self.movelist.x25_char_data, self.movelist.x25_custom_data, self.movelist.x25_data, "0d")
+
+            cancel_guide, goto_line_to_line = move.cancel.get_gui_guide(input_params)
             #for bytes in cancel_guide:
 
             raw = ''
