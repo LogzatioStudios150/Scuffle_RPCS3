@@ -862,6 +862,8 @@ class CC(Enum): #Cancel codes for the cancel block, mostly we expect (CC XX XX C
     COMPARE_96 = 0x96
     BITWISE_97 = 0x97
     BITWISE_98 = 0x98
+    EXE_92 = 0x92
+    EXE_93 = 0x93
     EXE_99 = 0x99
     RETURN_9e = 0x9e
     COMPARE_9f = 0x9f

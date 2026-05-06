@@ -2,6 +2,7 @@
 __pycache__/
 *.py[oc]
 build/
+Backups/
 dist/
 dist/SCUFFLE/
 Data/Scripts/Custom/
