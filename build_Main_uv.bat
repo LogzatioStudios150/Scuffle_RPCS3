@@ -20,4 +20,3 @@ rmdir /S /Q "SCUFFLE_Editor_RPCS3"
 "C:\Program Files\WinRAR\winrar.exe" x ./SCUFFLE_RPCS3_%1.rar
 
 cd ..
-0.5
